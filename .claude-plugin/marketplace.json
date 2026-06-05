@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "consulting",
-      "source": ".",
+      "source": "./",
       "description": "50+ consulting frameworks from McKinsey, BCG, Bain, and Accenture",
       "version": "0.1.1"
     }
