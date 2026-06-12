@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin manifests
+        run: |
+          jq empty .claude-plugin/plugin.json
+          jq empty .claude-plugin/marketplace.json
+          # relative-path sources must start with "./" — a bare "." breaks
+          # installs on older Claude Code versions (issue #3)
+          jq -e 'all(.plugins[].source; startswith("./"))' .claude-plugin/marketplace.json
+          # plugin.json and marketplace.json versions must stay in sync
+          plugin_version=$(jq -r .version .claude-plugin/plugin.json)
+          marketplace_version=$(jq -r '.plugins[0].version' .claude-plugin/marketplace.json)
+          if [ "$plugin_version" != "$marketplace_version" ]; then
+            echo "Version mismatch: plugin.json=$plugin_version marketplace.json=$marketplace_version"
+            exit 1
+          fi
+
+      - name: Check relative markdown links
+        run: |
+          python3 - <<'EOF'
+          import os, re, sys
+
+          link_re = re.compile(r'\[[^\]]*\]\(([^)#\s]+)(?:#[^)]*)?\)')
+          broken = []
+          for root, dirs, files in os.walk('.'):
+              dirs[:] = [d for d in dirs if d not in ('.git', '.github')]
+              for name in files:
+                  if not name.endswith('.md'):
+                      continue
+                  path = os.path.join(root, name)
+                  with open(path, encoding='utf-8') as f:
+                      text = f.read()
+                  for target in link_re.findall(text):
+                      if target.startswith(('http://', 'https://', 'mailto:')):
+                          continue
+                      resolved = os.path.normpath(os.path.join(root, target))
+                      if not os.path.exists(resolved):
+                          broken.append(f'{path}: {target}')
+          if broken:
+              print('Broken relative links:')
+              print('\n'.join(broken))
+              sys.exit(1)
+          print('All relative markdown links resolve.')
+          EOF

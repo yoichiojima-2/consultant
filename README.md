@@ -24,9 +24,25 @@ A Claude Code plugin with 50+ consulting frameworks from McKinsey, BCG, Bain, an
 | **Financial Analysis** | ROI, NPV, IRR, Payback, Break-even, Sensitivity Analysis |
 | **Operations** | Lean, Six Sigma, 5 Whys, Fishbone, PDCA, Pareto |
 
+## Commands
+
+| Command | What it does |
+|---------|--------------|
+| `/consult <problem>` | Full consulting engagement: clarify → hypothesis → issue tree → analysis → pyramid-structured recommendation |
+| `/analyze <company or market>` | Layered strategic analysis: PESTEL → Porter's 5 Forces → SWOT/3C → "so what" implications |
+| `/case-practice [type]` | Mock case interview (McKinsey/BCG/Bain style) with exhibits, math, and a scored debrief |
+
 ## Usage
 
-The skill activates automatically when you:
+Try asking:
+
+- `/consult our SaaS churn doubled last quarter — what should we do?`
+- `/analyze the Japanese convenience store industry`
+- `/case-practice profitability`
+- "Size the market for EV charging stations in Germany"
+- "Help me structure this recommendation for my exec presentation"
+
+The skill also activates automatically when you:
 - Analyze business problems
 - Develop strategy
 - Structure presentations

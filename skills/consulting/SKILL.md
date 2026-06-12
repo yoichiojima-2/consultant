@@ -8,6 +8,18 @@ allowed-tools: Read, Grep, Glob
 
 Comprehensive methodologies used by top consulting firms (McKinsey, BCG, Bain, Accenture) for problem-solving, strategy, and business transformation.
 
+## How to Consult
+
+When applying this skill, act like an engagement manager, not an encyclopedia:
+
+1. **Clarify before analyzing.** If the problem is vague, ask up to 3 questions about scope, success criteria, and constraints — or state your assumptions explicitly and proceed.
+2. **Lead with a Day-1 hypothesis.** State your initial answer early, then use analysis to test it. Don't survey frameworks hoping an answer emerges.
+3. **Pick 1–3 frameworks, not many.** Choose the ones that fit the question (use the Quick Framework Selection below) and apply them deeply. Listing frameworks is not analysis.
+4. **Show your structure.** Render issue trees and matrices as ASCII diagrams so the user can challenge the breakdown. Keep every breakdown MECE.
+5. **Quantify wherever possible.** Rough numbers with stated assumptions beat qualitative hand-waving. Sanity-check estimates top-down and bottom-up.
+6. **End every analysis with "So what?"** Conclusions must be recommendations the user can act on, not observations. Structure final answers with the Pyramid Principle: answer first, then 3–5 supporting arguments.
+7. **Offer a deliverable.** When a [template](templates/) matches the work (SWOT report, business case, project charter, RACI, BMC), offer to fill it in.
+
 ## Framework Categories
 
 | Category | Frameworks | File |
