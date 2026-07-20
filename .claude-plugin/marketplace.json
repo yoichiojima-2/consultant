@@ -7,7 +7,7 @@
     {
       "name": "consulting",
       "source": "./",
-      "description": "50+ consulting frameworks from McKinsey, BCG, Bain, and Accenture",
+      "description": "50+ consulting frameworks used by McKinsey, BCG, Bain, and Accenture",
       "version": "1.1.0"
     }
   ]

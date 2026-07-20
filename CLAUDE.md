@@ -1,6 +1,6 @@
 # Consultant
 
-A Claude Code plugin providing 50+ consulting frameworks from McKinsey, BCG, Bain, and Accenture.
+A Claude Code plugin providing 50+ consulting frameworks used by top firms (McKinsey, BCG, Bain, Accenture).
 
 ## Project Structure
 

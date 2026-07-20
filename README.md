@@ -1,6 +1,6 @@
 # Consultant
 
-A Claude Code plugin with 50+ consulting frameworks from McKinsey, BCG, Bain, and Accenture.
+A Claude Code plugin packaging 50+ consulting frameworks used by top firms (McKinsey, BCG, Bain, Accenture) as a skill plus three slash commands.
 
 ## Installation
 
@@ -51,6 +51,16 @@ The skill also activates automatically when you:
 - Improve profitability
 - Manage projects
 - Drive organizational change
+
+## How it works
+
+Everything is a markdown skill — no runtime code.
+
+- [`skills/consulting/SKILL.md`](skills/consulting/SKILL.md) is the entry point: its frontmatter description tells Claude when to activate, and the body sets behavior (hypothesis-first, pick 1–3 frameworks, end with "so what?") plus a selection guide mapping question types to frameworks.
+- The frameworks live in seven category files (`strategy.md`, `cases.md`, `finance.md`, …) that Claude reads on demand, so the full ~3,400 lines of framework content never sit in context at once.
+- [`commands/`](commands/) defines the three slash commands as prompt templates over the same skill.
+- [`skills/consulting/templates/`](skills/consulting/templates/) holds five fill-in deliverables (SWOT report, business case, project charter, RACI, Business Model Canvas) the skill offers to complete.
+- CI ([`validate.yml`](.github/workflows/validate.yml)) validates the plugin manifests, keeps the two version fields in sync, and checks every relative markdown link.
 
 ## License
 
