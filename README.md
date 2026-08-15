@@ -1,6 +1,8 @@
+
+
 # Consultant
 
-A Claude Code plugin packaging 50+ consulting frameworks used by top firms (McKinsey, BCG, Bain, Accenture) as a skill plus three slash commands.
+A Claude Code plugin providing 50+ consulting frameworks used by top firms (McKinsey, BCG, Bain, Accenture) as a skill plus three slash commands.
 
 ## Installation
 
@@ -9,7 +11,7 @@ A Claude Code plugin packaging 50+ consulting frameworks used by top firms (McKi
 /plugin marketplace add yoichiojima-2/consultant
 
 # Install plugin
-/plugin install consulting@consultant
+/plugin install consulting@consultant  # 'consulting' is the internal plugin ID (see .claude-plugin/plugin.json)
 ```
 
 ## Frameworks Included
