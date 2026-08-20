@@ -139,10 +139,10 @@ Always cross-check with:
 
 | Item | Approximate Value |
 |------|-------------------|
-| US Population | 330 million |
-| US Households | 130 million |
+| US Population | 340 million |
+| US Households | 132 million |
 | Average household size | 2.5 people |
-| US GDP | $25 trillion |
+| US GDP | $29 trillion |
 | Life expectancy | 80 years |
 | Working years | 40-45 years |
 | Days per year | 365 |
