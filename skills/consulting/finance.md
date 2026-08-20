@@ -289,6 +289,77 @@ Test one variable at a time:
 
 ---
 
+## Unit Economics (LTV / CAC)
+
+**Purpose**: Determine whether a business model is viable at the level of a single customer — do you earn more from a customer over their lifetime than it costs to acquire and serve them?
+
+### Core Metrics
+
+```
+CAC (Customer Acquisition Cost)
+    = Total Sales & Marketing Spend / New Customers Acquired
+
+LTV (Customer Lifetime Value)
+    = Average Contribution Margin per Customer per Period × Average Customer Lifetime
+    = (ARPU × Gross Margin %) / Churn Rate        ← common subscription shortcut
+
+Customer Lifetime = 1 / Churn Rate
+    (e.g., 5% monthly churn → average lifetime of 20 months)
+
+CAC Payback Period = CAC / (ARPU × Gross Margin %)
+    (months of margin needed to recover the acquisition cost)
+```
+
+### Decision Rules of Thumb
+
+| Metric | Healthy | Warning |
+|--------|---------|---------|
+| LTV : CAC ratio | ≥ 3× | < 1× means every new customer destroys value |
+| CAC payback | < 12 months | > 24 months strains cash even if LTV/CAC looks fine |
+| Churn (SaaS, monthly) | < 2% | > 5% caps growth regardless of acquisition |
+
+An LTV:CAC far above 3× isn't automatically good either — it can mean under-investment in growth.
+
+### How to Use
+
+1. **Compute contribution margin per customer**, not revenue — LTV built on revenue overstates value; use gross margin after cost-to-serve.
+2. **Compute CAC on a fully loaded basis** — include salaries and tooling of sales/marketing, not just ad spend.
+3. **Compare LTV to CAC and check payback** — the ratio tests viability, payback tests cash burn.
+4. **Segment before averaging** — blended unit economics often hide one great channel/segment subsidizing a terrible one. Compute per channel, segment, or cohort.
+5. **Test the levers** — price, churn, cost-to-serve, and CAC each move the model differently; use Sensitivity Analysis to find which lever matters most.
+
+### Example
+
+A subscription service:
+
+| Input | Value |
+|-------|-------|
+| Monthly subscription (ARPU) | $50 |
+| Gross margin | 70% |
+| Monthly churn | 4% |
+| Sales & marketing spend / month | $200,000 |
+| New customers / month | 1,000 |
+
+**Calculation**:
+- CAC: $200,000 / 1,000 = **$200**
+- Customer lifetime: 1 / 4% = 25 months
+- LTV: $50 × 70% × 25 = **$875**
+- LTV : CAC = $875 / $200 = **4.4×** → healthy
+- CAC payback: $200 / ($50 × 70%) = **5.7 months** → healthy
+
+**So what?** The model is viable; the biggest lever is churn — cutting it from 4% to 3% raises LTV to ~$1,167 (+33%) without spending another marketing dollar.
+
+### Limitations
+
+- LTV is a projection built on churn holding steady — early-stage churn data is noisy and cohorts often decay differently
+- Ignores time value of money (discount long lifetimes for rigor)
+- Blended averages conceal segment differences — always check the split
+- CAC rises as you saturate the best channels; today's ratio won't hold at scale
+
+**Combines well with**: Break-Even (volume needed to cover fixed costs), Sensitivity Analysis (which lever matters), Profitability Framework in [cases.md](cases.md) (diagnosing where margin leaks).
+
+---
+
 ## Quick Decision Guide
 
 | When to Use | Framework |
@@ -298,6 +369,7 @@ Test one variable at a time:
 | Finding the break-even return rate | IRR |
 | Risk-averse, need quick recovery | Payback |
 | Pricing and volume decisions | Break-Even |
+| Business model / customer profitability | Unit Economics (LTV/CAC) |
 | Understanding key drivers | Sensitivity |
 | Complete investment decision | Business Case |
 

@@ -522,42 +522,6 @@ For each analysis:
 
 ---
 
-## Combining Frameworks: The Complete Consulting Flow
+## Combining Frameworks
 
-```
-1. RECEIVE PROBLEM
-   └── Clarify scope and success criteria
-              ↓
-2. CREATE DAY-1 ANSWER
-   └── Initial hypothesis based on experience
-              ↓
-3. DEFINE PROBLEM (SCQ)
-   └── Situation, Complication, Question
-              ↓
-4. STRUCTURE (MECE + Issue Tree)
-   └── Break into testable components
-              ↓
-5. PRIORITIZE (80/20)
-   └── Focus on high-impact branches
-              ↓
-6. BUILD WORKPLAN
-   └── Who, what, when, how
-              ↓
-7. STORYBOARD (Ghostpack)
-   └── Design the end deliverable
-              ↓
-8. CONDUCT ANALYSES
-   └── Test hypotheses with data
-              ↓
-9. SYNTHESIZE ("So What?")
-   └── Extract insights and implications
-              ↓
-10. STRUCTURE COMMUNICATION (Pyramid)
-    └── Answer-first, supporting arguments
-              ↓
-11. BUILD BUY-IN
-    └── Align stakeholders, refine recommendations
-              ↓
-12. PRESENT & DELIVER
-    └── Communicate, get approval, implement
-```
+These frameworks chain together into a complete engagement: see **The Complete Consulting Flow** in [SKILL.md](SKILL.md), which is the single source of truth for the end-to-end sequence.
